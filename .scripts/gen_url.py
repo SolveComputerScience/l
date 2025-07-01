@@ -68,7 +68,7 @@ def create_redirect_file(original_url: str, page_title: str = '', existing_file:
 
     file: str = get_file_name(hash_hex, 'html', existing_file)
     
-    html_content: str = f"""<!DOCTYPE html><html><head><title>{page_title}</title>{gen_umami_code(slugify.slugify(page_title))}<meta http-equiv="refresh" content="{PAGE_TIMEOUT}; url={original_url}" /></head><body><p>This redirection page is managed by <a href="https://www.youtube.com/@SolveComputerScience">SolveComputerScience</a></p><p>If you are not redirected in {PAGE_TIMEOUT} seconds, <a href="{original_url}">click here</a>.</p></body></html>"""
+    html_content: str = f"""<!DOCTYPE html><html><head><title>{page_title}</title><link rel="stylesheet" href=".core.css">{gen_umami_code(slugify.slugify(page_title))}<meta http-equiv="refresh" content="{PAGE_TIMEOUT}; url={original_url}" /></head><body><p>This redirection page is managed by <a href="https://www.youtube.com/@SolveComputerScience">SolveComputerScience</a></p><p>If you are not redirected in {PAGE_TIMEOUT} seconds, <a href="{original_url}">click here</a>.</p></body></html>"""
  
     dst_file: pathlib.Path = pathlib.Path(DST_DIR, file)
     if (dst_file.is_file() and overwrite) or (not dst_file.is_file()):
