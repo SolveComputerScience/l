@@ -118,7 +118,7 @@ def search(
                 logging.info(f'{relative_file}')
 
                 if print_url:
-                    url: str = urljoin(URL_SUFFIX, str(path))
+                    url: str = urljoin(''.join([URL_SUFFIX, '/']), str(path))
                     logging.info(f'{url}')
 
                 if verbose:
