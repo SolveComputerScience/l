@@ -1,6 +1,6 @@
 # l
 
-A very stupid DIY link shortener service, HTML powered.
+An incredibly stupid static DIY link shortener service, GitHub and HTML powered.
 
 ## License
 
